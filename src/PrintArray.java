@@ -1,3 +1,4 @@
+package src;
 public class PrintArray {
     public static <T> void print(T[] arr) {
         for(T element: arr) {

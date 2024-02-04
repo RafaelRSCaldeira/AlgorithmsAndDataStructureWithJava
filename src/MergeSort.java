@@ -1,3 +1,4 @@
+package src;
 public class MergeSort {
     public static int[] sortAscending(int[] arr, int ini, int end) {
         if(ini >= end)

@@ -1,3 +1,4 @@
+package src;
 public class InsertionSort {
     static <T extends Comparable<T>> void sortAscending(T[] arr) {
         if(arr.length < 2) {

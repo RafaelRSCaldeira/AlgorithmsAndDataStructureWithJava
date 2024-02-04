@@ -1,3 +1,4 @@
+package src;
 public class SelectionSort {
     static <T extends Comparable<T>> void sortAscending(T[] arr) {
         T min;
