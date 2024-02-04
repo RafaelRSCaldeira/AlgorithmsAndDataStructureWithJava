@@ -9,11 +9,8 @@ About the Book
 Repository Structure
 src/: This directory contains the Java source code for various algorithms discussed in the book.
 
-docs/: Find additional documentation and explanations for the implemented algorithms.
-
 tests/: Unit tests and sample input/output for validating the correctness of the algorithms.
 
-resources/: Any additional resources such as images, datasets, or other files required for the algorithms.
 
 Acknowledgments
 
