@@ -1,6 +1,6 @@
 package src;
 public class InsertionSort {
-    static <T extends Comparable<T>> void sortAscending(T[] arr) {
+    public static <T extends Comparable<T>> void sortAscending(T[] arr) {
         if(arr.length < 2) {
             System.out.println("Array already sorted");
             return;
@@ -18,7 +18,7 @@ public class InsertionSort {
             }
         }
     }
-    static <T extends Comparable<T>> void sortDescending(T[] arr) {
+    public static <T extends Comparable<T>> void sortDescending(T[] arr) {
         for(int i=0; i<arr.length; i++) {
             T key = arr[i];
             int j = i-1;

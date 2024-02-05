@@ -1,6 +1,6 @@
 package src;
 public class SelectionSort {
-    static <T extends Comparable<T>> void sortAscending(T[] arr) {
+    public static <T extends Comparable<T>> void sortAscending(T[] arr) {
         T min;
         int index;
         for(int i = 0; i < arr.length-1; i++) {
@@ -16,7 +16,7 @@ public class SelectionSort {
             arr[i] = min;
         }
     }
-    static <T extends Comparable<T>> void sortDescending(T[] arr) {
+    public static <T extends Comparable<T>> void sortDescending(T[] arr) {
         T max;
         int index;
         for(int i=0; i<arr.length-1; i++) {

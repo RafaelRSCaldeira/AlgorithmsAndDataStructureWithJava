@@ -1,4 +1,4 @@
-package src;
+package tests;
 public class PrintArray {
     public static <T> void print(T[] arr) {
         for(T element: arr) {
