@@ -1,41 +1,52 @@
 package src;
 public class MergeSort {
-    public static int[] sortAscending(int[] arr, int ini, int end) {
-        if(ini >= end)
-            return arr;
-        int mid = (end+ini)/2;
-        int[] L = new int[mid - ini + 1];
-        int[] R = new int[end - mid];
-        for(int i = 0; i < L.length; i++)
-            L[i] = arr[i];
-        for(int j = 0; j < R.length; j++)
-            R[j] = arr[L.length + j];
-        L = sortAscending(L, ini, mid);
-        R = sortAscending(R, mid+1, end);
-        return merge(L,R);
+    public static <T extends Comparable<T>> void sortAscending(T[] arr) {
+        if(arr.length == 1)
+            return;
+        sort(arr);
+        return;
     }
-    public static int[] merge(int[] L, int[] R) {
-        int i = 0;
-        int j = 0;
-        int[] arr = new int[L.length + R.length];
-        while(i < L.length && j < R.length) {
-            if(L[i] < R[j]) {
-                arr[i+j] = L[i];
-                i++;
+    public static <T extends Comparable<T>> void sortDescending(T[] arr) {
+        if(arr.length == 1)
+            return;
+        sort(arr);
+        ArrayManipulation.reverse(arr);
+        return;
+    }
+    public static <T extends Comparable<T>> void sort(T[] arr) {
+        int leftLength = arr.length/2;
+        int rightLength = arr.length-leftLength;
+        @SuppressWarnings("unchecked")
+        T[] left = (T[]) new Comparable[leftLength];
+        @SuppressWarnings("unchecked")
+        T[] right = (T[]) new Comparable[rightLength];
+        ArrayManipulation.copy(arr, left, 0, leftLength-1);
+        ArrayManipulation.copy(arr, right, leftLength, arr.length - 1);
+        sortAscending(left);
+        sortAscending(right);
+        merge(arr, left, right);
+    }
+    public static <T extends Comparable<T>> void merge(T[] finalArray, T[] left, T[] right) {
+        int leftIndex = 0;
+        int rightIndex = 0;
+        while(leftIndex < left.length && rightIndex < right.length) {
+            if(left[leftIndex].compareTo(right[rightIndex]) < 0) {
+                finalArray[leftIndex + rightIndex] = left[leftIndex];
+                leftIndex++;
             }
             else {
-                arr[i+j] = R[j];
-                j++;
+                finalArray[leftIndex + rightIndex] = right[rightIndex];
+                rightIndex++;
             }
         }
-        while(i < L.length) {
-            arr[i+j] = L[i];
-            i++;
+        while(leftIndex < left.length) {
+            finalArray[leftIndex + rightIndex] = left[leftIndex];
+            leftIndex++;
         }
-        while(j < R.length) {
-            arr[i+j] = R[j];
-            j++;
+        while(rightIndex < right.length) {
+            finalArray[leftIndex + rightIndex] = right[rightIndex];
+            rightIndex++;
         }
-        return arr;
+        return;
     }
 }
