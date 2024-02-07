@@ -21,4 +21,22 @@ public class ArrayManipulation {
             array[i] = reversed[i];
         }
     }
+    public static <T extends Number> double sum(T[] array) {
+        double sum = 0;
+        for(T item: array)
+            sum += (double) item;
+        return sum;
+    }
+    public static int sum(int[] array) {
+        int sum = 0;
+        for(int num: array)
+            sum += num;
+        return sum;
+    }
+    public static int sum(int[] array, int startIndex, int endIndex) {
+        int sum = 0;
+        for(int i = startIndex; i <= endIndex; i++)
+            sum += array[i];
+        return sum;
+    }
 }
