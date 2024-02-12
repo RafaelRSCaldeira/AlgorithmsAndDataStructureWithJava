@@ -1,8 +1,5 @@
-package tests;
-
 import org.junit.*;
 import org.junit.Test;
-import src.MergeSort;
 
 public class MergeSortTest {
     @Test

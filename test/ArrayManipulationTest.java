@@ -1,8 +1,5 @@
-package tests;
-
 import org.junit.Test;
 import org.junit.*;
-import src.ArrayManipulation;
 
 
 public class ArrayManipulationTest {
