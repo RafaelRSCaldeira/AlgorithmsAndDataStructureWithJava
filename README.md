@@ -15,7 +15,9 @@ Repository Structure
 
 src/: This directory contains the Java source code for various algorithms discussed in the book.
 
-tests/: Unit tests and sample input/output for validating the correctness of the algorithms.
+test/: Unit tests and sample input/output for validating the correctness of the algorithms.
+
+bin/: Contains all the compiled Java classes corresponding to the algorithms implemented in this repository.
 
 
 Acknowledgments
