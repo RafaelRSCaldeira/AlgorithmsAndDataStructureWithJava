@@ -1,5 +1,3 @@
-package src;
-
 public class BubbleSort {
     public static <T extends Comparable<T>> void sortAscending(T[] arr) {
         boolean sorted = true;

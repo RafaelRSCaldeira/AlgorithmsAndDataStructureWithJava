@@ -1,5 +1,3 @@
-package src;
-
 public class ArrayManipulation {
     public static <T> void copy(T[] source, T[] target, int startIndex, int endIndex) {
         for(int i = startIndex; i <= endIndex; i++)

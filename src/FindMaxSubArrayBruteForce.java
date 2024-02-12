@@ -1,5 +1,3 @@
-package src;
-
 public class FindMaxSubArrayBruteForce {
     public static int[] find(int[] arr, int startIndex, int endIndex) {
         int leftIndex = 0;

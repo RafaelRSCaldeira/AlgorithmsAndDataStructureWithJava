@@ -1,5 +1,3 @@
-package src;
-
 public class FindMaxSubArray {
     public static int[] find(int[] arr, int startIndex, int endIndex) {
         if(startIndex == endIndex)
