@@ -60,6 +60,11 @@ public class MaxHeap {
         return getLastValue();
     }
 
+    public void update(int index, int newValue) {
+        arr.set(index, newValue);
+        organize(index);
+    }
+
     private void swap(int firstIndex, int secondIndex) {
         int temp = arr.get(firstIndex);
         arr.set(firstIndex, arr.get(secondIndex));

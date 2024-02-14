@@ -78,4 +78,15 @@ public class MaxHeapTest {
         assertEquals(16, num);
         assertEquals(expected, heap.getArray());
     }
+
+    @Test
+    public void updateTest() {
+        heap.update(3, 10);
+        List<Integer> expected = List.of(16,13,9,10,12,8,4,1,2,3);
+        assertEquals(expected, heap.getArray());
+
+        heap.update(9, 20);
+        expected = List.of(20,16,9,10,13,8,4,1,2,12);
+        assertEquals(expected, heap.getArray());
+    }
 }
