@@ -21,31 +21,11 @@ public class MaxHeap {
         return arr;
     }
 
-    public void insert(int num) {
-        arr.add(num);
-        pointer++;
-        checkOrderAscending(pointer);
-    }
-
-    private void checkOrderAscending(int index) {
-        int valueIndex = index;
-        while(!isOrderedAscending(valueIndex)) {
-            swap(valueIndex, (valueIndex-1)/2);
-            valueIndex = (valueIndex-1)/2;
-        }
-    }
-
-    private boolean isOrderedAscending(int index) {
-        if(index > 0 && arr.get(index) > getFather(index))
-            return false;
-        return true;
-    }
-
-    private void swap(int firstIndex, int secondIndex) {
-        System.out.println(firstIndex + " " + secondIndex);
-        int temp = arr.get(firstIndex);
-        arr.set(firstIndex, arr.get(secondIndex));
-        arr.set(secondIndex, temp);
+    public void show() {
+        for(int num: arr) 
+            System.out.print(num + " ");
+        System.out.println();
+        System.out.println(pointer);
     }
 
     public int getFather(int childIndex) {
@@ -67,10 +47,87 @@ public class MaxHeap {
         }
         return Integer.MIN_VALUE;
     }
+    
+    public void insert(int num) {
+        arr.add(num);
+        pointer++;
+        checkOrderAscending(pointer);
+    }
 
-    public void show() {
-        for(int num: arr) 
-            System.out.print(num + " ");
-        System.out.println();
+    public int getValue(int index) {
+        swap(index, pointer);
+        organize(index);
+        return getLastValue();
+    }
+
+    private void swap(int firstIndex, int secondIndex) {
+        int temp = arr.get(firstIndex);
+        arr.set(firstIndex, arr.get(secondIndex));
+        arr.set(secondIndex, temp);
+    }
+
+    private void organize(int index) {
+        if(arr.get(index) > getFather(index))
+            checkOrderAscending(index);
+        else if(arr.get(index) < arr.get(max(index)))
+            checkOrderDescending(index);
+    }
+
+    private int getLastValue() {
+        int num = arr.remove(pointer);
+        pointer--;
+        return num;
+    }
+
+    private void checkOrderAscending(int index) {
+        int valueIndex = index;
+        while(!isOrderedAscending(valueIndex)) {
+            swap(valueIndex, (valueIndex-1)/2);
+            valueIndex = (valueIndex-1)/2;
+        }
+    }
+
+    private boolean isOrderedAscending(int index) {
+        if(index > 0 && arr.get(index) > getFather(index))
+            return false;
+        return true;
+    }
+
+    private void checkOrderDescending(int index) {
+        int valueIndex = index;
+        while(!isOrderedDescending(valueIndex)) {
+            int max = max(valueIndex);
+            swap(valueIndex, max);
+            valueIndex = max;
+        }
+    }
+
+    private boolean isOrderedDescending(int index) {
+        if(arr.get(index) < arr.get(max(index)))
+            return false;
+        return true;
+    }
+
+    private int max(int index) {
+        if(hasBoth(index)) {
+            if(getLeft(index) > getRight(index))
+                return index*2 + 1;
+            return index*2 + 2;
+        }
+        if(hasLeft(index))
+            return index*2 + 1;
+        return index;
+    }
+
+    private boolean hasBoth(int index) {
+        if(2*index + 2 <= pointer)
+            return true;
+        return false;
+    }
+
+    private boolean hasLeft(int index) {
+        if(2*index + 1 <= pointer)
+            return true;
+        return false;
     }
 }

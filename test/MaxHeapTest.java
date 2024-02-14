@@ -24,14 +24,11 @@ public class MaxHeapTest {
     }
 
     @Test
-    public void insertTest() {
-        heap.insert(20);
-        List<Integer> expected = List.of(20,16,9,6,13,8,4,1,2,3,12);
-        assertEquals(expected, heap.getArray());
-        heap.insert(-1);
-        expected = List.of(20,16,9,6,13,8,4,1,2,3,12,-1);
-        assertEquals(expected, heap.getArray());
-
+    public void getFatherTest() {
+        assertEquals(16, heap.getFather(1));
+        assertEquals(16, heap.getFather(2));
+        assertEquals(6, heap.getFather(7));
+        assertEquals(6, heap.getFather(8));
     }
 
     @Test
@@ -50,10 +47,35 @@ public class MaxHeapTest {
     }
 
     @Test
-    public void getFatherTest() {
-        assertEquals(16, heap.getFather(1));
-        assertEquals(16, heap.getFather(2));
-        assertEquals(6, heap.getFather(7));
-        assertEquals(6, heap.getFather(8));
+    public void insertTest() {
+        heap.insert(20);
+        List<Integer> expected = List.of(20,16,9,6,13,8,4,1,2,3,12);
+        assertEquals(expected, heap.getArray());
+        heap.insert(-1);
+        expected = List.of(20,16,9,6,13,8,4,1,2,3,12,-1);
+        assertEquals(expected, heap.getArray());
+
+    }
+
+    @Test
+    public void getValueTest() {
+        int num = heap.getValue(5);
+        List<Integer> expected = List.of(16,13,9,6,12,3,4,1,2);
+        assertEquals(8, num);
+        assertEquals(expected, heap.getArray());
+
+        num = heap.getValue(2);
+        expected = List.of(16,13,4,6,12,3,2,1);
+        assertEquals(9, num);
+        assertEquals(expected, heap.getArray());
+        num = heap.getValue(1);
+        expected = List.of(16,12,4,6,1,3,2);
+        //assertEquals(13, num);
+        assertEquals(expected, heap.getArray());
+
+        num = heap.getValue(0);
+        expected = List.of(12,6,4,2,1,3);
+        assertEquals(16, num);
+        assertEquals(expected, heap.getArray());
     }
 }
