@@ -56,6 +56,7 @@ public class MaxHeap {
 
     public int getValue(int index) {
         swap(index, pointer);
+        pointer--;
         organize(index);
         return getLastValue();
     }
@@ -79,8 +80,7 @@ public class MaxHeap {
     }
 
     private int getLastValue() {
-        int num = arr.remove(pointer);
-        pointer--;
+        int num = arr.remove(pointer+1);
         return num;
     }
 
