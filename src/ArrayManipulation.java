@@ -37,4 +37,9 @@ public class ArrayManipulation {
             sum += array[i];
         return sum;
     }
+    public static <T extends Comparable<T>> void swap(T[] arr, int firstIndex, int secondIndex) {
+        T temp = arr[firstIndex];
+        arr[firstIndex] = arr[secondIndex];
+        arr[secondIndex] = temp;
+    }
 }
