@@ -68,9 +68,10 @@ public class MaxHeapTest {
         expected = List.of(16,13,4,6,12,3,2,1);
         assertEquals(9, num);
         assertEquals(expected, heap.getArray());
+        
         num = heap.getValue(1);
         expected = List.of(16,12,4,6,1,3,2);
-        //assertEquals(13, num);
+        assertEquals(13, num);
         assertEquals(expected, heap.getArray());
 
         num = heap.getValue(0);
