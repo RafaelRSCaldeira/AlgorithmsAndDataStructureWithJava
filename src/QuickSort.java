@@ -19,7 +19,7 @@ public class QuickSort {
     public static <T extends Comparable<T>> void sortDescending(T[] arr, int startIndex, int endIndex) {
         if(startIndex >= endIndex)
             return;
-        int midIndex = partition(arr, startIndex, endIndex,-10);
+        int midIndex = partition(arr, startIndex, endIndex,-1);
         sortDescending(arr, startIndex, midIndex-1);
         sortDescending(arr, midIndex+1, endIndex);
     }
