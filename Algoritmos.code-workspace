@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Tarefa 4/.vscode"
+		}
+	],
+	"settings": {
+		"java.project.sourcePaths": [
+			"src",
+			"test"
+		],
+		"java.project.outputPath": "bin"
+	}
+}
