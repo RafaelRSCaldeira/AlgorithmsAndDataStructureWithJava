@@ -29,4 +29,36 @@ public class ArrayManipulationTest {
         ArrayManipulation.swap(arr, 0, 6);
         assertArrayEquals(expected,arr);
     }
+
+    @Test
+    public void sumTest() {
+        int[] arr = {1,2,3,4,5,6,7};
+        int sum = ArrayManipulation.sum(arr,2,5);
+        assertEquals(18, sum);
+
+        sum = ArrayManipulation.sum(arr);
+        assertEquals(28,sum);
+    }
+
+    @Test
+    public void maxTest() {
+        int[] arr = {5,3,1,20,3,18,8,14};
+        int max = ArrayManipulation.max(arr);
+        assertEquals(20, max);
+
+        Integer[] arr2 = {5,3,1,20,3,18,8,14};
+        max = ArrayManipulation.max(arr2);
+        assertEquals(20, max);
+    }
+
+    @Test
+    public void minTest() {
+        int[] arr = {5,3,1,20,3,18,8,14};
+        int min = ArrayManipulation.min(arr);
+        assertEquals(1, min);
+
+        Integer[] arr2 = {5,3,1,20,3,18,8,14};
+        min = ArrayManipulation.min(arr2);
+        assertEquals(1, min);
+    }
 }
