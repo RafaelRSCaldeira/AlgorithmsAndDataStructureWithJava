@@ -1,14 +1,14 @@
-Algorithms with Java - README
+Algorithms and Data Structure with Java - README
 
 
 Introduction
 
-Welcome to the Algorithms with Java repository! This branch is dedicated to my journey of implementing algorithms in Java based on the concepts presented in the renowned book "Introduction to Algorithms" by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein.
+Welcome to the Algorithms and Data Structure with Java repository! This branch is dedicated to my journey of implementing algorithms and data structures in Java based on the concepts presented in the renowned book "Introduction to Algorithms" by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein.
 
 
 About the Book
 
-"Introduction to Algorithms" is a widely respected and extensively used textbook in the field of computer science. Authored by experts, it provides a comprehensive introduction to the design and analysis of algorithms. This repository aims to bring the theoretical knowledge from the book into practical implementation using Java.
+"Introduction to Algorithms" is a widely respected and extensively used textbook in the field of computer science. Authored by experts, it provides a comprehensive introduction to the design and analysis of algorithms and data structures. This repository aims to bring the theoretical knowledge from the book into practical implementation using Java.
 
 
 Repository Structure
